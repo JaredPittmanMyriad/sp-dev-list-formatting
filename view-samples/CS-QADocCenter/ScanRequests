@@ -1,0 +1,320 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+  "tileProps": {
+    "hideSelection": true,
+    "height": "300",
+    "width": "360",
+    "formatter": {
+      "elmType": "div",
+      "style": {
+        "align-items": "stretch",
+        "margin": "3px 2px",
+        "background-color": "#fbfbfb",
+        "height": "295px",
+        "overflow": "inherit",
+        "border-radius": "2px",
+        "box-shadow": "0px 1.6px 3.6px 0 #00000024, 0px 0.3px 0.9px 0 #00000024"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "position": "relative",
+            "padding-bottom": "10px",
+            "width": "100%"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "margin-top": "0px",
+                "height": "200px",
+                "display": "block",
+                "align-items": "center",
+                "justify-content": "center",
+                "position": "relative",
+                "border-bottom": "1px solid #EEE",
+                "overflow": "hidden",
+                "border-radius": "2px 2px 0 0"
+              },
+              "children": [
+                {
+                  "elmType": "button",
+                  "style": {
+                    "position": "absolute",
+                    "height": "100%",
+                    "width": "100%",
+                    "opacity": "0",
+                    "cursor": "pointer"
+                  },
+                  "customRowAction": {
+                    "action": "defaultClick"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "margin": "0 0 0 15px",
+                "position": "absolute",
+                "top": "80px",
+                "width": "100%",
+                "color": "#333333"
+              },
+              "attributes": {},
+              "children": [
+                {
+                  "elmType": "div",
+                  "txtContent": "[$Verification_x0020_Status]",
+                  "attributes": {
+                    "class": "ms-fontSize-16 ms-fontWeight-semibold"
+                  },
+                  "style": {
+                    "margin-bottom": "10px",
+                    "color": "=if([$Verification_x0020_Status] == 'New', 'Orange', if([$Verification_x0020_Status] == 'Submitted to Scanner', 'Blue',if([$Verification_x0020_Status] == 'Received by Scanner - Pending Review', 'Blue', if([$Verification_x0020_Status] == 'Approved by Scanner', 'Teal', if([$Verification_x0020_Status] == 'Completed', 'Green', if([$Verification_x0020_Status] == 'Rejected', 'Red', 'Purple')))"
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "Department: ",
+                  "attributes": {
+                    "class": "ms-fontSize-14 ms-fontWeight-semibold"
+                  },
+                  "style": {}
+                },
+                {
+                  "elmType": "span",
+                  "style": {
+                    "display": "inline"
+                  },
+                  "txtContent": "[$Department]"
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "Category: ",
+                  "attributes": {
+                    "class": "ms-fontSize-14 ms-fontWeight-semibold"
+                  },
+                  "style": {
+                    "margin-top": "10px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "style": {
+                    "display": "inline"
+                  },
+                  "txtContent": "[$Category]"
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "Sub-Category: ",
+                  "attributes": {
+                    "class": "ms-fontSize-14 ms-fontWeight-semibold"
+                  },
+                  "style": {
+                    "margin-top": "10px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "style": {
+                    "display": "inline"
+                  },
+                  "txtContent": "[$Sub_x002d_Category]"
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "block",
+                "padding-left": "15px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "inline-block",
+                    "line-height": "2",
+                    "background-color": "=if([$WebExtender_x0020_Status] == 'Confirmed', 'rgba(186, 216, 10, 0.5)', if([$WebExtender_x0020_Status] == 'Pending', 'rgba(255, 185, 0, 0.3)',if([$WebExtender_x0020_Status] == 'Cancelled', 'rgba(0, 120, 212, 0.17)', if([$WebExtender_x0020_Status] == 'Rejected', 'rgba(232, 17, 35, 0.5)', '#f3f2f1')",
+                    "padding": "0 7px",
+                    "border-radius": "1px",
+                    "font-size": "12px",
+                    "margin-bottom": "15px",
+                    "margin-top": "-7px"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "color": "#333333",
+                        "display": "inline"
+                      },
+                      "txtContent": "WebExtender Review Status: "
+                    },
+                    {
+                      "elmType": "span",
+                      "style": {
+                        "display": "inline"
+                      },
+                      "txtContent": "[$WebExtender_x0020_Status]"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "span",
+                  "style": {
+                    "display": "inline",
+                    "float": "right",
+                    "padding-left": "30px",
+                    "color": "#7b7b7b"
+                  },
+                  "txtContent": {
+                    "operator": "+",
+                    "operands": [
+                      "Form ID: ",
+                      "[$ID]"
+                    ]
+                  }
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "color": "#666666",
+                    "display": "block"
+                  },
+                  "children": [
+                    {
+                      "forEach": "personIterator in [$Author]",
+                      "elmType": "div",
+                      "style": {
+                        "width": "32px",
+                        "height": "32px",
+                        "overflow": "hidden",
+                        "border-radius": "50%",
+                        "display": "inline-block",
+                        "vertical-align": "middle"
+                      },
+                      "children": [
+                        {
+                          "elmType": "img",
+                          "attributes": {
+                            "src": {
+                              "operator": "+",
+                              "operands": [
+                                "/_layouts/15/userphoto.aspx?size=M&accountname=",
+                                "[$personIterator.email]"
+                              ]
+                            },
+                            "title": "[$personIterator.title]"
+                          },
+                          "style": {
+                            "position": "relative",
+                            "top": "50%",
+                            "left": "50%",
+                            "width": "100%",
+                            "margin-left": "-50%",
+                            "margin-top": "-50%"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "display": "inline-block",
+                        "color": "#333333",
+                        "font-size": "14px",
+                        "padding-left": "8px",
+                        "vertical-align": "middle"
+                      },
+                      "txtContent": {
+                        "operator": "+",
+                        "operands": [
+                          "Submitted by: ",
+                          "[$personIterator.title]"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "width": "100%",
+                "height": "32px",
+                "padding": "0 0 0 16px",
+                "position": "absolute",
+                "bottom": "10px",
+                "justify-content": "space-around"
+              },
+              "children": [
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "executeFlow",
+                    "actionParams": "{\"id\": \"flowID\"}"
+                  },
+                  "attributes": {
+                    "title": "=if([$Verification_x0020_Status] == 'Scanned-In - Pending WebExtender Review', 'Ready to start WebExtender approval process', if([$Verification_x0020_Status] == 'Submitted to Scanner', 'Item is still pending delivery', 'Item is still pending delivery'))"
+                  },
+                  "style": {
+                    "padding": "0px 16px",
+                    "height": "32px",
+                    "margin-right": "8px",
+                    "font-size": "14px",
+                    "border-radius": "2px",
+                    "cursor": "=if([$Verification_x0020_Status] == 'Scanned-In - Pending WebExtender Review', 'pointer', if([$Verification_x0020_Status] == 'Submitted to Scanner', 'not-allowed', 'not-allowed'))",
+                    "border": "none",
+                    "color": "=if([$Verification_x0020_Status] == 'Scanned-In - Pending WebExtender Review', '#FFF', if([$Verification_x0020_Status] == 'Submitted to Scanner', '#A19F9D', '#A19F9D'))",
+                    "font-weight": "600",
+                    "background-color": "=if([$Verification_x0020_Status] == 'Scanned-In - Pending WebExtender Review', '#0078d4', if([$Verification_x0020_Status] == 'Submitted to Scanner', '#f3f2f1', '#f3f2f1'))"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "=if([$Verification_x0020_Status] == 'Scanned-In - Pending WebExtender Review', 'Start WebExtender Approval', if([$Verification_x0020_Status] == 'Submitted to Scanner', 'Start WebExtender Approval', 'Start WebExtender Approval'))"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "defaultClick"
+                  },
+                  "attributes": {
+                    "title": "View Details"
+                  },
+                  "style": {
+                    "height": "32px",
+                    "padding": "0 16px",
+                    "color": "#333",
+                    "border": "1px solid #8a8886",
+                    "background-color": "white",
+                    "cursor": "pointer",
+                    "font-size": "14px",
+                    "font-weight": "600",
+                    "line-height": "1.4",
+                    "border-radius": "2px"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "View Details"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
